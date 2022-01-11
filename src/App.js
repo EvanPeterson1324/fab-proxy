@@ -16,22 +16,19 @@ import {
 import lunr from 'lunr';
 import { v4 as uuidv4 } from 'uuid';
 import './App.css';
-import cards from './cards.js'
+import cards from './tales-of-aria'
 
 
 function FABCard(props) {
   const { card, watermarkOptions, defaultWatermark, addCardToPrint, removeCardToPrint } = props
   const [watermark, setWatermark] = React.useState(defaultWatermark);
-  const imgUrl = "https://images.thepitchzone.com/cards/" + card.id + ".png";
+  const imgUrl = card.image;
   return (
     <Card className="fab-card">
       <Card.Img src={imgUrl} />
       <div className="watermark">{watermark}</div>
       <Card.Body className="card-info no-print">
-        <Card.Title>{card.n}</Card.Title>
-        <Card.Text>
-          {"(" + card.ed + ")"}
-        </Card.Text>
+        <Card.Title>{card.name}</Card.Title>
 
       </Card.Body>
       <Card.Footer className="no-print">
@@ -118,30 +115,31 @@ function App() {
     //       "twinn", "twinning blade" will not show up due to it presumably be stemmed as "twin".
     this.pipeline.remove(lunr.stemmer)
     this.searchPipeline.remove(lunr.stemmer)
-    this.ref('id')
-    this.field('n')
-    this.field('ed')
+    this.ref('identifier')
+    this.field('name')
 
-    cards.forEach(function (card) {
-      this.add(card)
-    }, this)
+    cards.forEach((card) => this.add(card), this)
   })
-  var cardMap = cards.reduce((obj, item) => {
+
+  var cardMap = cards.reduce((acc, card) => {
     return {
-      ...obj,
-      [item['id']]: item,
+      ...acc,
+      [card['identifier']]: card,
     };
   }, {});
+
   var _ = require('lodash');
   const watermarkOptions = ['Proxy', 'Missing', 'In Box']
   const [defaultWatermark, setDefaultWatermark] = React.useState(watermarkOptions[0])
   const [cardsToPrint, setCardsToPrint] = React.useState([])
+
   const addCardToPrint = card => {
     card = { ...card, uuid: uuidv4() }
-    setCardsToPrint(_.sortBy([...cardsToPrint, card], [card => card.n]))
+    setCardsToPrint(_.sortBy([...cardsToPrint, card], [card => card.name]))
   };
+
   const removeCardToPrint = index => {
-    return card => {
+    return () => {
       var cardsCopy = [...cardsToPrint];
       cardsCopy.splice(index, 1);
       setCardsToPrint(cardsCopy);
@@ -245,7 +243,7 @@ function App() {
         </Col>
       </Row>
       <Navbar bg="light" variant="light" className="no-print">
-        <Navbar.Text>A special thanks to <a href="https://thepitchzone.com">The Pitch Zone</a> for card lists and images.</Navbar.Text>
+        <Navbar.Text>Thanks to <a href="https://fabdb.net">fabdb.net</a> for card lists and images.</Navbar.Text>
       </Navbar>
     </Container>
 
