@@ -1,8 +1,8 @@
 {
   "name": "fab-proxy",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "private": true,
-  "homepage": "http://cgilling.github.io/fab-proxy",
+  "homepage": "https://evanpeterson1324.github.io/fab-proxy/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.8",
     "@testing-library/react": "^11.2.2",
