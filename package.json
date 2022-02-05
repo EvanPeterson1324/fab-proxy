@@ -1,19 +1,19 @@
 {
-  "name": "fab-proxy",
+  "name": "evanpeterson1324.github.io",
   "version": "1.0.0",
   "private": true,
   "homepage": "evanpeterson1324.github.io",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.8",
-    "@testing-library/react": "^11.2.2",
-    "@testing-library/user-event": "^12.6.0",
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
     "axios": "^0.24.0",
-    "bootstrap": "^4.5.3",
-    "lodash": "^4.17.20",
+    "bootstrap": "^4.6.1",
+    "lodash": "^4.17.21",
     "lunr": "^2.3.9",
-    "react": "^17.0.1",
-    "react-bootstrap": "^1.4.0",
-    "react-dom": "^17.0.1",
+    "react": "^17.0.2",
+    "react-bootstrap": "^1.6.4",
+    "react-dom": "^17.0.2",
     "react-script-loader-hoc": "^1.2.2",
     "react-scripts": "4.0.1",
     "uuid": "^8.3.2",
@@ -46,6 +46,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.1.0"
+    "gh-pages": "^3.2.3"
   }
 }

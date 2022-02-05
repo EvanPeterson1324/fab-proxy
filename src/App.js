@@ -16,7 +16,7 @@ import {
 import lunr from 'lunr';
 import { v4 as uuidv4 } from 'uuid';
 import './App.css';
-import cards from './tales-of-aria'
+import cards from './everfest.json'
 
 
 function FABCard(props) {
@@ -222,10 +222,10 @@ function App() {
             Different browsers give it slightly different names.
           </Alert>
           <h3>Feedback</h3>
-          <p>
+          {/* <p>
             If you have any feedback, please create a <a href="https://github.com/cgilling/fab-proxy/issues">github issue</a>,
             and I will try to respond within a reasonable time.
-          </p>
+          </p> */}
         </Modal.Body>
       </Modal>
       <Row className="main">

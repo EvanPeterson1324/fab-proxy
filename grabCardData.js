@@ -1,3 +1,6 @@
+
+// TODO: only grab card data that we don't have...
+
 const fs = require('fs')
 const axios = require('axios')
 const cards = []
@@ -39,6 +42,6 @@ const grabCards = async () => {
     shouldStop = true
   }
 }
-const FIVE_SECONDS = 5000
+const TWO_SECONDS = 2000
 
-intervalId = setInterval(grabCards, FIVE_SECONDS)
+intervalId = setInterval(grabCards, TWO_SECONDS)
