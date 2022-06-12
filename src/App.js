@@ -16,7 +16,7 @@ import {
 import lunr from 'lunr';
 import { v4 as uuidv4 } from 'uuid';
 import './App.css';
-import cards from './everfest.json'
+import cards from './uprising.json'
 
 
 function FABCard(props) {
@@ -57,7 +57,7 @@ function FABCard(props) {
 
 function CardSearch(props) {
   const { cardIdx, cardMap, addCardToPrint, defaultWatermark, setDefaultWatermark, watermarkOptions } = props
-  const [searchTerm, setSearchTerm] = React.useState("fyen");
+  const [searchTerm, setSearchTerm] = React.useState("flame");
   const handleChange = event => {
     setSearchTerm(event.target.value);
   };
